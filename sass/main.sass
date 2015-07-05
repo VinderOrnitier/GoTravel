@@ -1,0 +1,744 @@
+@import "bourbon/bourbon"
+
+$aqua: #28D0D0
+$aqua-d: #106E6E
+$orange: #FF792B
+$orange-l: #FFA16C
+
+html.js .loader
+	background: none repeat scroll 0 0 #ffffff
+	bottom: 0
+	height: 100%
+	left: 0
+	position: fixed
+	right: 0
+	top: 0
+	width: 100%
+	z-index: 9999
+	.loader_inner
+		background-image: url("../img/preloader.gif")
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: center center
+		background-color: #fff
+		height: 60px
+		width: 60px
+		margin-top: -30px
+		margin-left: -30px
+		left: 50%
+		top: 50%
+		position: absolute
+
+body
+	font-family: "RobotoRegular", sans-serif
+	font-weight: normal
+	font-size: 14px
+	min-width: 320px
+	position: relative
+	line-height: 1.6
+	-webkit-font-smoothing: antialised
+	overflow-x: hidden
+
+input
+	outline: none
+
+// Наложение для видео
+.mbYTP_wrapper::before 
+	display: block
+	content: ""
+	width: 100%
+	height: 100%
+	position: absolute
+	background-image: url("../img/subtle-carbon.png")
+	background-color: rgba(0,0,0,.3)
+	z-index: 2
+
+header
+	position: relative
+	width: 100%
+	height: 100vh
+
+	.top-menu
+		font-family: "EtelkaMediumProRegular", sans-serif
+		position: absolute
+		height: 90px
+		width: 100%
+		border-bottom: 1px solid rgba(204, 204, 204, 0.3)
+		transition: all .3s ease-in-out
+		z-index: 9
+
+	.fixed
+		position: fixed
+		height: 50px
+		background-color: rgba(255,255,255,.9)
+		z-index: 9
+		svg
+			height: 30px
+		ul
+			margin: 0
+		.btn
+			font-size: 15px
+		.btn-border-o
+			color: #000
+
+	nav
+		display: block
+		ul
+			list-style: none
+			display: flex
+			justify-content: space-between
+			margin: 19px 0
+			text-transform: uppercase
+
+			.animate, .btn, .btn-border-o:before, .btn-border-o:after, .btn-border:before, .btn-border:after
+				-webkit-transition: all 0.3s
+				transition: all 0.3s
+
+			.btn
+
+				display: inline-block
+				line-height: 35px
+				margin: 8px
+				padding: 0 17px
+				font-size: 18px
+				position: relative
+				border-radius: 3px
+				cursor: pointer
+
+			.btn-border-o 
+				color: #F0F0F0
+
+				&:before, &:after 
+					content: ''
+					border-style: solid
+					position: absolute
+					z-index: 5
+					border-radius: 3px
+					box-sizing: content-box
+			
+				&:before 
+					width: 0
+					height: 100%
+					border-width: 1px 0 1px 0
+					top: -1px
+					left: 0
+					-webkit-transition-delay: 0.05s
+					transition-delay: 0.05s
+			
+				&:after 
+					width: 100%
+					height: 0
+					border-width: 0 1px 0 1px
+					top: 0
+					left: -1px
+			
+				&:hover:before
+					width: 100%
+				
+				&:hover:after
+					height: 100%
+			
+			.btn-border-o.btn-blue:before, .btn-border-o.btn-blue:after 
+				border-color: $orange
+			
+			.btn-border-o.btn-blue:hover 
+				color: #B24200
+
+	svg
+		height: 100%
+		width: 264px
+		margin-top: 10px
+		float: left
+
+	path
+		fill: rgb(40, 208, 208)
+
+.tabs-section
+	position: absolute
+	width: 100%
+	height: 100%
+	.container
+		position: relative
+		top: 50%
+		+transform(translateY(-50%))
+.tabs
+	width: 100%
+	label[id^="tab_"]
+		color: #000
+		cursor: pointer
+		display: block
+		float: left
+		width: 150px
+		height: 45px
+		line-height: 45px
+		position: relative
+		top: 2px
+		text-align: center
+		background-color: $orange-l
+		text-transform: uppercase
+		font-weight: bold
+		i
+			vertical-align: text-bottom
+			font-size: 18px
+
+	input[id^="tab_"]
+		position: absolute
+		left: -9999px
+
+#tab_1:checked ~ #tab_l1, #tab_2:checked ~ #tab_l2, #tab_3:checked ~ #tab_l3
+	background: $orange
+	border-color: #fff
+	top: 0
+	z-index: 3
+
+.tabs_cont
+	background: rgba(255, 255, 255, 0.8)
+	position: relative
+	z-index: 2
+	height: 100%
+	border-top: 2px solid $orange
+	padding: 30px
+	> div
+		position: absolute
+		left: -9999px
+		top: 0
+		opacity: 0
+		-moz-transition: opacity .5s ease-in-out
+		-webkit-transition: opacity .5s ease-in-out
+		transition: opacity .5s ease-in-out
+.head-tab
+	display: flex
+	justify-content: space-between
+	margin-bottom: 30px
+	h1
+		font-family: "EtelkaMediumProRegular", sans-serif
+		float: left
+		margin: 0
+
+	.switch
+		background-color: $aqua
+		width: 200px
+		display: inline-block
+		height: 40px
+		padding: 5px
+		position: relative
+		zoom: 1
+		float: right
+		&:before
+			content: " "
+			display: table
+		&:after
+			content: " "
+			display: table
+			clear: both
+		label
+			float: left
+			width: 50%
+			font-weight: 400
+			position: relative
+			z-index: 2
+			line-height: 30px
+			cursor: pointer
+			color: $aqua-d
+			text-align: center
+
+		input[type="radio"]
+			display: none
+			&:checked + label
+				color: $orange
+		span
+			position: relative
+			z-index: 1
+			top: 0
+			left: 0
+			width: 50%
+			height: 100%
+			display: block
+			background-color: #FFF3EB
+			-webkit-transition: all 200ms ease
+			transition: all 200ms ease
+			&.right
+				left: 50%
+				-webkit-transition: all 200ms ease
+				transition: all 200ms ease
+
+#tab_1:checked ~ .tabs_cont #tab_c1, #tab_2:checked ~ .tabs_cont #tab_c2, #tab_3:checked ~ .tabs_cont #tab_c3
+	position: static
+	left: 0
+	opacity: 1
+
+.content
+	height: 1000px
+	background-color: pink
+
+.bottommargin-sm
+	margin-bottom: 30px
+
+[id^="tab_"]
+	form
+		label
+			display: inline-block
+			font-size: 13px
+			font-weight: 700
+			font-family: "EtelkaMediumProRegular",sans-serif
+			text-transform: uppercase
+			letter-spacing: 1px
+			color: $aqua-d
+			margin-bottom: 10px
+			cursor: pointer
+		.sm-form-control
+			display: block
+			width: 100%
+			padding: 8px 14px
+			font-size: 15px
+			line-height: 1.42857143
+			color: $orange
+			background-color: #fff
+			background-image: none
+			border: 2px solid $aqua
+			transition: border-color ease-in-out .15s
+			outline: 0
+		.button
+			display: inline-block
+			position: relative
+			cursor: pointer
+			outline: 0
+			padding: 0 22px
+			font-size: 14px
+			height: 40px
+			line-height: 40px
+			background-color: $orange
+			color: #FFF
+			text-transform: uppercase
+			letter-spacing: 1px
+			border: none
+		.more-link
+			display: inline-block
+			border-bottom: 1px solid #1ABC9C
+			font-style: italic
+			float: right
+			text-decoration: none
+			color: $orange
+
+.features
+	text-align: center
+	margin: 40px 0
+	padding: 0 10px
+	i
+		font-size: 52px
+		padding: 12px
+		border-radius: 50%
+		color: #fff
+		background-color: $orange
+		transition: all .3s ease-in-out
+		cursor: pointer
+		&:hover
+			background-color: #1ABC9C
+	.features-sub
+		a
+			display: inline-block
+			font-size: 24px
+			margin: 10px 0
+			text-decoration: none
+			color: #000
+		p
+			margin: 0
+			color: #999
+
+.bg-parallax
+	background: 
+		image: url("../img/Hotel-Room.jpg")
+		position: center 0px
+		repeat: no-repeat
+		attachment: fixed
+	&:before
+		content: ""
+		background-color: rgba(0, 0, 0, 0.5)
+		position: absolute
+		width: 100%
+		height: 500px
+.deal-cont
+	height: 500px
+	text-align: center
+	.deal-box
+		color: #fff
+		top: 20%
+		position: relative
+		h2
+			margin: 0
+			font-size: 40px
+			margin-bottom: 10px
+		h5
+			font-family: "EtelkaMediumProRegular",sans-serif
+			font-size: 46px
+			margin: 0
+		p
+			margin: 0
+			font-size: 20px
+		span
+			font-size: 18px
+			b
+				color: $aqua
+		button
+			margin: 20px
+			background-color: $orange
+			border: none
+			padding: 10px 20px
+			text-transform: uppercase
+			outline: 0
+		ul
+			list-style: none
+			padding: 0
+			margin: 0
+			color: #FFCC2B
+			li
+				display: inline-block
+
+.pop-hot
+	padding: 30px 0
+	h1
+		text-align: center
+		margin: 0
+		padding: 0 0 30px 0
+	.hotel-block
+		margin-bottom: 30px
+		figure
+			overflow: hidden
+			a
+				position: relative
+				display: block
+				img
+					width: 100%
+					transition: all .3s ease-out
+					&:hover
+						transform: scale(1.2)
+
+		.details
+			padding: 10px 15px
+			background-color: #F5F5F5
+			a.button
+				text-decoration: none
+				padding: 5px 15px
+				background-color: $aqua
+				float: right
+				color: #fff
+				margin-top: 10px
+				transition: all .2s ease-in-out
+				&:hover
+					background-color: $orange
+
+			h4
+				font-family: "EtelkaMediumProRegular",sans-serif
+				margin: 0
+
+				a
+					text-decoration: none
+					color: #000
+					font-size: 16px
+					font-weight: normal
+					transition: all .2s ease-in-out
+					&:hover
+						color: $aqua
+
+				label
+					display: block
+					color: #999
+					font-weight: normal
+					text-transform: uppercase
+					font-size: 10px
+					span
+						color: $orange
+						font-size: 16px
+
+.honeymoon-cov
+	background: #FFE5D5 url("../img/gplay.png")
+	.couple
+		background: url("../img/couple.png") bottom center no-repeat
+		height: 571px
+	.honeymoon
+		padding-top: 30px
+		h3
+			margin: 0
+			font-size: 2em
+		p
+			color: $aqua-d
+			line-height: 18px
+		.honey-block
+			margin-bottom: 30px
+			figure
+				overflow: hidden
+				a
+					position: relative
+					display: block
+					height: 250px
+					img
+						width: 100%
+						filter: saturate(0)
+						transition: all .3s ease-out
+						&:hover
+							transform: scale(1.2)
+							filter: saturate(1)
+			.details
+				padding: 8px
+				background-color: rgba(255, 255, 255, 0.5)
+				text-align: center
+				h4
+					margin: 0
+					font-size: 18px
+					line-height: 18px
+				span
+					font-size: 12px
+					color: #999
+					margin-bottom: 10px
+					display: inline-block
+				p
+					margin: 0
+					a
+						text-decoration: none
+						display: inline-block
+						background-color: $orange
+						color: #fff
+						text-transform: uppercase
+						padding: 5px 15px
+						transition: all .2s ease-in-out
+						&:hover
+							background-color: $aqua
+
+.blog-cov
+	background-color: #f5f5f5
+.blog-head
+	text-align: center
+	margin-bottom: 30px
+	h2
+		font-size: 2em
+		margin: 30px 0 0 0
+	p
+		color: #999
+.blog-body
+	margin-bottom: 30px
+	background-color: #FFF
+	ul
+		list-style: none
+		padding: 0
+		margin: 0
+		color: #999
+		li
+			float: left
+			font-size: 12px
+			transition: all .2s ease-in-out
+			i
+				vertical-align: bottom
+				font-size: 18px
+			&:first-child
+				&:after
+					content: "/"
+					margin: 0 5px
+			&:last-child
+				cursor: pointer
+				&:hover
+					color: $orange
+
+	figure
+		overflow: hidden
+		background-color: $aqua
+		a
+			position: relative
+			display: block
+			height: 250px
+			img
+				height: 100%
+				opacity: .5
+				transition: all .3s ease-out
+				&:hover
+					transform: scale(1.2)
+					opacity: 1
+
+	span
+		color: #999
+	h3
+		text-transform: uppercase
+
+	.entry-content
+		display: block
+		margin-top: 20px
+		.more-link
+			display: inline-block
+			border-bottom: 1px solid $aqua
+			font-style: italic
+			text-decoration: none
+			color: $orange
+			transition: all .2s ease-in-out
+			&:hover
+				color: $aqua
+				border-color: $orange
+
+.col-style
+	display: flex
+	flex-direction: column
+	padding: 20px 20px 20px 0
+
+footer
+	.footer-wrapper
+		padding: 50px 0
+		.small-box
+			margin-bottom: 30px
+			h2
+				font-weight: normal
+			.discover-container
+				ul
+					list-style: none
+					margin: 0
+					padding: 0
+					li
+						float: left
+						font-size: 12px
+						line-height: 35px
+						padding: 0
+						&:before
+							content: ">"
+							margin-right: 10px
+							color: #d9d9d9
+							display: block
+							float: left
+							font-size: 10px
+						a
+							text-decoration: none
+							color: $aqua
+			.travel-news
+				list-style: none
+				margin: 0
+				padding: 0
+				li
+					margin-bottom: 20px
+					.thumb
+						float: left
+						a
+							display: block
+							width: 64px
+							height: 64px
+					.description
+						padding-left: 78px
+						h5
+							text-decoration: none
+							margin: 0
+							font-weight: normal
+							line-height: 14px
+							a
+								text-decoration: none
+								color: $orange
+								font-size: 14px
+						p
+							font-size: 12px
+						span
+							font-size: 12px
+							color: #999
+			.form
+				p
+					color: #999
+					font-size: 12px
+				.full-width
+					position: relative
+					input
+						border: none
+						background-color: #f5f5f5
+						padding: 10px 15px
+						font-size: 12px
+						width: 100%
+					button
+						position: absolute
+						height: auto
+						width: auto
+						border: none
+						background-color: rgb(255, 121, 43)
+						color: #fff
+						padding: 0 5px
+						outline: 0
+						top: 0
+						right: 0
+						i
+							font-size: 25px
+							line-height: 39px
+
+		.contact-box
+			p
+				font-size: 12px
+				color: #999
+			address
+				margin-bottom: 20px
+				span
+					font-size: 24px
+					font-style: normal
+					i
+						font-size: 28px
+						line-height: 28px
+						vertical-align: middle
+						color: $aqua
+				a
+					padding: 0 35px
+					font-style: normal
+					text-decoration: none
+					color: $aqua
+		.social_links
+			margin-bottom: 20px
+			ul
+				list-style: none
+				margin: 0
+				padding: 0
+			.social-foot li
+				list-style: none
+				display: inline-block
+
+			a.social-icon
+				list-style: none
+				background-image: url(http://imagehoster.gamer-designs.de/uploads/2013/06/i341b9whbi.png)
+				background-color: #F3F4F5
+				height: 29px
+				float: left
+				width: 29px
+				-webkit-transition: all 0.15s ease
+				-moz-transition: all 0.15s ease
+				transition: all 0.15s ease
+				&.twitter
+					background-position: -1px -1px
+				&.facebook
+					background-position: -32px -1px
+				
+				&.instagram
+					background-position: -94px -1px
+				&.googleplus
+					background-position: -125px -1px
+				&.github
+					background-position: -156px -1px
+				&.youtube
+					background-position: -373px -1px
+				&.rss
+					background-position: -404px -1px
+
+				&.twitter:hover
+					background-position: -1px -32px
+				&.facebook:hover
+					background-position: -32px -32px
+				&.instagram:hover
+					background-position: -94px -32px
+				&.googleplus:hover
+					background-position: -125px -32px
+				&.github:hover
+					background-position: -156px -32px
+				&.youtube:hover
+					background-position: -373px -32px
+				&.rss:hover
+					background-position: -404px -32px
+
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: red
+body input:required:valid,
+body textarea:required:valid
+	color: green
+
+.hidden
+	display: none
+
+.visible
+	display: block

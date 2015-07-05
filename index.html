@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<!--if lt IE 7 html.ie.ie6(lang='en')  
+-->
+<!--if IE 7 html.ie.ie7(lang='en')  
+-->
+<!--if IE 8 html.ie.ie8(lang='en')  
+-->
+<!-- [if (gte IE 9)|!(IE)] <!-->
+<html lang="ru">
+  <!-- <![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>Trips</title>
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="libs/animate/animate.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="libs/YTPlayer/jquery.mb.YTPlayer.min.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/media.css">
+    <script src="libs/modernizr/modernizr.js"></script>
+  </head>
+  <body>
+    <header><a id="bgndVideo" data-property="{videoURL:'https://youtu.be/ZSNyrBbsQZk',containment:'header',autoPlay:true, showControls:false, mute:true, startAt:0, opacity:1}" class="player"></a>
+      <div class="top-menu">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="133.49112mm" height="37.50516mm" viewbox="0 0 473.00003 132.8923">
+                  <path d="M15.40003 132.23436c-.60516-.40408-1.6335-1.7472-2.28518-2.9847-.74838-1.4211-2.10966-2.25-3.69516-2.25-1.38066 0-3.61483-1.10454-4.96483-2.45454-1.94973-1.94973-2.45454-3.48007-2.45454-7.44098 0-2.74254-.45-5.26455-1-5.60447-.55-.33992-1-3.71492-1-7.5s.45-7.16008 1-7.5c.5968-.36885 1-6.84372 1-16.05902 0-9.62732-.3765-15.44098-1-15.44098-.57778 0-1-3.16667-1-7.5s.42222-7.5 1-7.5c.55346 0 1-2.62974 1-5.88922 0-8.6908 1.78955-10.4725 11.15976-11.11078l7.34023-.5.26657-13.5.26657-13.5 2.9992-2.75c2.90738-2.6658 3.35037-2.75 14.46766-2.75 11.1173 0 11.56028.0842 14.46765 2.75l2.9992 2.75.26658 13.5.26657 13.5 7.2173.5c11.62238.80518 10.73642-2.9223 11.06392 46.54912l.28122 42.47935-2.48576 2.48576c-1.36716 1.36718-3.64086 2.48577-5.05266 2.48577-1.7741 0-2.92207.77954-3.7169 2.52398-2.11357 4.6388-8.11476 4.4314-10.29424-.35578-.9455-2.07678-1.58848-2.1682-15.25-2.1682-11.28098 0-14.26287.2812-14.26287 1.345 0 3.22238-5.72316 5.8108-8.6003 3.8897zM61.86456 96.3011c3.95642-2.87978 7.13577-9.87386 7.13577-15.6976 0-8.62163-4.52846-15.44344-11.39584-17.16704-3.81424-.9573-3.1712.7577 1.14853 3.0632 4.7633 2.54227 7.24373 7.4341 7.24574 14.28985.003 9.50453-4.88575 15.61017-12.49844 15.61017-7.6127 0-12.50124-6.10564-12.49845-15.61016.002-7.24836 2.45596-11.79503 7.7122-14.28983 4.93245-2.3411 5.59557-4.01186 1.24713-3.14218-11.64415 2.32883-16.33486 21.05645-7.64426 30.51967 4.88163 5.31562 14.0183 6.44857 19.54762 2.42392zm-30.11423 1.06828c2.09207-.56065 2.25-1.15632 2.25-8.48634v-7.88337h-5.5c-3.025 0-5.5.45-5.5 1s1.82147 1 4.04772 1h4.0477l-.2977 6.25-.29772 6.25-5.20183.3006c-9.76673.56436-15.2907-4.78254-15.2907-14.8006 0-10.30866 5.56318-15.43697 16.09338-14.83536 6.6474.37978 8.07673-1.2256 2.1837-2.45266-11.49-2.39247-21.28455 5.8238-21.28455 17.85478 0 10.2184 6.24814 16.44282 16.48213 16.4196 3.30983-.008 7.03037-.285 8.26787-.61664zm18.02988-77.1197l-.27987-12.75h-22l-.27988 12.75-.27988 12.75h23.11951l-.27987-12.75zm59.22014 62.75v-43h-29V33.97234l32.75.26367 32.75.26367.31642 2.75.31642 2.75h-30.13284v86h-7v-43zm48.2399-2.75l.2601-45.75 3.25-.31336 3.25-.31336v44.33736l11.75-.35532c10.6645-.3225 12.18077-.60856 16.41297-3.09648 6.70554-3.94188 9.33704-8.6651 9.33704-16.75885 0-12.39832-6.4312-17.94356-21.95058-18.9267-8.83317-.5596-9.04942-.63304-9.04942-3.0733 0-2.49346.0248-2.4999 9.5-2.4681 11.95907.04015 17.56733 2.0336 22.96144 8.16164 10.50497 11.93428 6.53603 30.30954-8.19168 37.92553l-2.99048 1.54644 3.5266 2.3964c4.79797 3.2603 7.99205 10.32137 11.6345 25.72008 1.66292 7.0301 3.49745 13.6676 4.07674 14.75.9651 1.80334.72192 1.96802-2.90622 1.96802h-3.95947l-3.2177-13.75c-3.53238-15.09472-5.28483-19.3582-9.66742-23.5197-3.87255-3.67717-7.99348-4.7303-18.5097-4.7303h-8.7566v42h-7.0202l.2601-45.75zm63.03308 34.02155c2.32486-6.51553 9.85202-27.48027 16.72702-46.5883l12.5-34.74186 3.3502.2793 3.35018.2793 16.3998 45.42528c9.0199 24.9839 16.39982 45.7964 16.39982 46.25 0 .4536-1.4863.82472-3.30292.82472-3.296 0-3.31092-.0226-7.115-10.75-2.09664-5.9125-4.69266-13.1125-5.76893-16l-1.95686-5.25H256.4285c-15.10694 0-15.47184-.11665-13.82117-4.4182.5083-1.32465 2.62168-1.5818 13-1.5818 7.0466 0 12.393-.40454 12.393-.93772 0-.51574-3.375-10.74324-7.5-22.72776-4.125-11.98453-7.52044-22.02506-7.54544-22.3123-.025-.28722-6.1417 16.80277-13.59264 37.97777-7.45095 21.175-14.1105 40.075-14.79903 42-1.08058 3.02114-1.74885 3.54228-4.8844 3.809l-3.63254.309 4.22702-11.84644zm77.8103-33.52168c-8.2958-24.88756-15.08328-45.61607-15.08328-46.06335 0-.4473 1.4625-.67223 3.25-.49988l3.25.31335 9.67555 29c5.32155 15.95 11.42058 34.72434 13.5534 41.72076l3.87785 12.72076 2.81407-8.72077c2.31625-7.178 8.0876-23.40007 25.7831-72.47076.81742-2.2668 1.58946-2.75 4.39385-2.75 1.8712 0 3.40217.29293 3.40217.65094 0 .68315-30.22043 82.4738-32.5513 88.09907-1.09144 2.63408-1.90907 3.25-4.31438 3.25h-2.96773l-15.0833-45.25012zm64.37453 44.00012c-.26368-.6875-.36205-21.275-.2186-45.75l.2608-44.5h45l.3164 2.75.31643 2.75h-39.13284v35h37.13284l-.31642 2.75-.31642 2.75-18.25.27256-18.25.27256v38.95487h41v6h-23.53138c-17.90276 0-23.64606-.299-24.0108-1.25zm63 0c-.26368-.6875-.36205-21.275-.2186-45.75l.2608-44.5 3.25-.31335 3.25-.31336v86.12672h41v6h-23.5314c-17.90275 0-23.64605-.299-24.0108-1.25z" fill="#050505"></path>
+                </svg>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <nav>
+                <ul>
+                  <li class="btn btn-blue btn-border-o"><span>Home</span><i class="material-icons hidden">home</i></li>
+                  <li class="btn btn-blue btn-border-o"><span>Flights</span><i class="material-icons hidden">flight</i></li>
+                  <li class="btn btn-blue btn-border-o"><span>Hotels</span><i class="material-icons hidden">hotel</i></li>
+                  <li class="btn btn-blue btn-border-o"><span>Holidays</span><i class="material-icons hidden">insert_emoticon</i></li>
+                  <li class="btn btn-blue btn-border-o"><span>Blog</span><i class="material-icons hidden">event_note</i></li>
+                  <li class="btn btn-blue btn-border-o"><span>(976) 937 99 92</span><i class="material-icons hidden">phone</i></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="tabs-section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-7 col-xs-12">
+              <div class="tabs">
+                <input id="tab_1" type="radio" name="tab" checked="checked">
+                <input id="tab_2" type="radio" name="tab">
+                <input id="tab_3" type="radio" name="tab">
+                <label id="tab_l1" for="tab_1"><i class="material-icons">flight</i><span> Flights</span></label>
+                <label id="tab_l2" for="tab_2"><i class="material-icons">domain</i><span> Hotels</span></label>
+                <label id="tab_l3" for="tab_3"><i class="material-icons">cake</i><span> Holidays</span></label>
+                <div style="clear:both"></div>
+                <div class="tabs_cont">
+                  <div id="tab_c1">
+                    <div class="head-tab">
+                      <h1>Book your Flights</h1>
+                      <div class="switch">
+                        <input id="optionone" name="radio" type="radio" value="optionone" checked="">
+                        <label for="optionone">Domestic</label>
+                        <input id="optiontwo" name="radio" type="radio" value="optiontwo">
+                        <label for="optiontwo" class="right">International</label><span aria-hidden="true"></span>
+                      </div>
+                    </div>
+                    <form action="#" method="post">
+                      <div class="row">
+                        <div class="col-sm-6 col-xs-12 bottommargin-sm">
+                          <label for="from">From</label>
+                          <input type="text" id="from" value="" placeholder="Eg. Italy, Venice" class="sm-form-control">
+                        </div>
+                        <div class="col-sm-6 col-xs-12 bottommargin-sm">
+                          <label for="to">To</label>
+                          <input type="text" id="to" value="" placeholder="Eg. Houston, United States" class="sm-form-control">
+                        </div>
+                        <div class="col-sm-9 bottommargin-sm">
+                          <div class="row">
+                            <div class="col-sm-6 col-xs-6">
+                              <label for="departure">Departure</label>
+                              <input type="date" id="departure" value="" name="start" placeholder="MM/DD/YYYY" class="sm-form-control">
+                            </div>
+                            <div class="col-sm-6 col-xs-6">
+                              <label for="return">Return</label>
+                              <input type="date" id="return" value="" name="end" placeholder="MM/DD/YYYY" class="sm-form-control">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-3 bottommargin-sm">
+                          <label for="adults">Adults</label>
+                          <input type="number" id="adults" min="1" max="10" value="" name="end" placeholder="2" class="sm-form-control">
+                        </div>
+                        <div class="col-sm-12">
+                          <button class="button">Search Flights</button><a href="#" style="margin-top: 9px;" class="more-link">Advanced Search</a>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div id="tab_c2">
+                    <div class="head-tab">
+                      <h1>Book your Hotels</h1>
+                      <div class="switch">
+                        <input id="optionone" name="radio" type="radio" value="optionone" checked="">
+                        <label for="optionone">Domestic</label>
+                        <input id="optiontwo" name="radio" type="radio" value="optiontwo">
+                        <label for="optiontwo" class="right">International</label><span aria-hidden="true"></span>
+                      </div>
+                    </div>
+                    <form action="#" method="post">
+                      <div class="row">
+                        <div class="col-sm-12 bottommargin-sm">
+                          <label for="city">City</label>
+                          <input type="text" id="city" value="" placeholder="Eg. Italy, Venice" class="sm-form-control">
+                        </div>
+                        <div class="col-sm-9 bottommargin-sm">
+                          <div class="row">
+                            <div class="col-sm-6 col-xs-6">
+                              <label for="departure">Departure</label>
+                              <input type="date" id="departure" value="" name="start" placeholder="MM/DD/YYYY" class="sm-form-control">
+                            </div>
+                            <div class="col-sm-6 col-xs-6">
+                              <label for="return">Return</label>
+                              <input type="date" id="return" value="" name="end" placeholder="MM/DD/YYYY" class="sm-form-control">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-3 bottommargin-sm">
+                          <label for="rooms">Rooms</label>
+                          <input type="number" id="rooms" min="1" max="10" value="" name="end" placeholder="2" class="sm-form-control">
+                        </div>
+                        <div class="col-sm-12">
+                          <button class="button">Search Hotels</button><a href="#" style="margin-top: 9px;" class="more-link">Popular Hotels</a>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div id="tab_c3">
+                    <div class="head-tab">
+                      <h1>Search for Holiday Packages</h1>
+                      <div class="switch">
+                        <input id="optionone" name="radio" type="radio" value="optionone" checked="">
+                        <label for="optionone">Domestic</label>
+                        <input id="optiontwo" name="radio" type="radio" value="optiontwo">
+                        <label for="optiontwo" class="right">International</label><span aria-hidden="true"></span>
+                      </div>
+                    </div>
+                    <form action="#" method="post">
+                      <div class="row">
+                        <div class="col-sm-6 col-xs-12 bottommargin-sm">
+                          <label for="from">From</label>
+                          <input type="text" id="from" value="" placeholder="Eg. Italy, Venice" class="sm-form-control">
+                        </div>
+                        <div class="col-sm-6 col-xs-12 bottommargin-sm">
+                          <label for="destination">Destination</label>
+                          <input type="text" id="destination" value="" placeholder="Eg. Europe" class="sm-form-control">
+                        </div>
+                        <div class="clear"></div>
+                        <div class="col-sm-9 bottommargin-sm">
+                          <div class="row">
+                            <div class="col-sm-6 col-xs-6">
+                              <label for="month">Month</label>
+                              <select name="month" id="month" class="sm-form-control">
+                                <option value="">-- Select Month --</option>
+                                <option value="November 2014">November 2014</option>
+                                <option value="December 2014">December 2014</option>
+                                <option value="January 2015">January 2015</option>
+                                <option value="February 2015">February 2015</option>
+                                <option value="March 2015">March 2015</option>
+                                <option value="April 2015">April 2015</option>
+                                <option value="May 2015">May 2015</option>
+                                <option value="June 2015">June 2015</option>
+                              </select>
+                            </div>
+                            <div class="col-sm-6 col-xs-6">
+                              <label for="budget">Budget</label>
+                              <select name="budget" id="budget" class="sm-form-control">
+                                <option value="">-- Select Budget --</option>
+                                <option value="November 2014">$99 to $199</option>
+                                <option value="December 2014">$200 to $499</option>
+                                <option value="January 2015">$500 to $999</option>
+                                <option value="February 2015">$1000 to $1999</option>
+                                <option value="March 2015">Above $2000</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-3 bottommargin-sm">
+                          <label for="adults">Adults</label>
+                          <input type="number" id="adults" min="1" max="10" value="" name="end" placeholder="2" class="sm-form-control">
+                        </div>
+                        <div class="col-sm-12">
+                          <button class="button">Search Flights</button><a href="#" style="margin-top: 9px;" class="more-link">Advanced Search</a>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-3">
+            <div class="features"><i class="material-icons">security</i>
+              <div class="features-sub"><a href="#">Trust & Safety</a>
+                <p>Insurance and customer care.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <div class="features"><i class="material-icons">local_airport</i>
+              <div class="features-sub"><a href="#">Search Flights</a>
+                <p>Easy & Cheap.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <div class="features"><i class="material-icons">event_available</i>
+              <div class="features-sub"><a href="#">Get Hotel Deals</a>
+                <p>Over 10000+ Places.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <div class="features"><i class="material-icons">local_phone</i>
+              <div class="features-sub"><a href="#">(976) 937 99 92</a>
+                <p>24x7 Dedicated Helpline.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-parallax">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="deal-cont">
+              <div class="deal-box">
+                <h2>Last Minute Deal</h2>
+                <ul>
+                  <li><i class="material-icons">star</i></li>
+                  <li><i class="material-icons">star</i></li>
+                  <li><i class="material-icons">star</i></li>
+                  <li><i class="material-icons">star</i></li>
+                  <li><i class="material-icons">star</i></li>
+                </ul>
+                <h5>One Aldwych London - Single Room</h5>
+                <p>Wednesday 04 Mar - Thursday 05 Mar</p><span> <b>$146.0 </b>/ night<br></span>
+                <button>Book now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="pop-hot">
+              <h1>Popular Hotels</h1>
+              <div class="row hotels">
+                <div class="col-md-3 col-sm-6">
+                  <div class="hotel-block">
+                    <figure><a href="#" class="hover-effect"><img src="http://static.soaptheme.net/uploads/2014/11/4-500x300.jpg" alt="alt"></a></figure>
+                    <div class="details"><a href="#" class="button">Select</a>
+                      <h4><a href="#">Hilton Hotel</a>
+                        <label><span>$120.00 </span>avg/night</label>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <div class="hotel-block">
+                    <figure><a href="#" class="hover-effect"><img src="http://static.soaptheme.net/uploads/2014/11/5-500x300.jpg" alt="alt"></a></figure>
+                    <div class="details"><a href="#" class="button">Select</a>
+                      <h4><a href="#">Hôtel Alpina</a>
+                        <label><span>$150.00 </span>avg/night</label>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <div class="hotel-block">
+                    <figure><a href="#" class="hover-effect"><img src="http://static.soaptheme.net/uploads/2014/11/10-500x300.jpg" alt="alt"></a></figure>
+                    <div class="details"><a href="#" class="button">Select</a>
+                      <h4><a href="#">Hotel Colombina</a>
+                        <label><span>$250.00 </span>avg/night</label>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                  <div class="hotel-block">
+                    <figure><a href="#"><img src="http://static.soaptheme.net/uploads/2014/11/9-500x300.jpg" alt="alt"></a></figure>
+                    <div class="details"><a href="#" class="button">Select</a>
+                      <h4><a href="#">Hilton Molino Stucky</a>
+                        <label><span>$540.00 </span>avg/night</label>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="honeymoon-cov">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <div class="couple"></div>
+          </div>
+          <div class="col-md-7">
+            <div class="honeymoon">
+              <h3>Popular Destinations for Honeymoon</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, libero, ullam. Quaerat fugiat, voluptas assumenda doloremque quos tempore magnam esse natus et delectus.</p>
+              <div class="honeymoon-box">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="honey-block">
+                      <figure><a href="#"><img src="../img/сouple1.jpg" alt="alt"></a></figure>
+                      <div class="details">
+                        <h4>Cyprus</h4><span>(430+ PLACES)</span>
+                        <p><a href="#" class="button">See all</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="honey-block">
+                      <figure><a href="#"><img src="../img/сouple2.jpg" alt="alt"></a></figure>
+                      <div class="details">
+                        <h4>Paris</h4><span>(720+ PLACES)</span>
+                        <p><a href="#" class="button">See all</a></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="honey-block">
+                      <figure><a href="#"><img src="../img/сouple3.jpg" alt="alt"></a></figure>
+                      <div class="details">
+                        <h4>Australia</h4><span>(510+ PLACES)</span>
+                        <p><a href="#" class="button">See all</a></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="blog-cov">
+      <div class="container">
+        <div class="row">
+          <div class="blog-head">
+            <h2>Latest from our Blog</h2>
+            <p>Stay in Touch with the Latest Travel Trends & Destination News</p>
+          </div>
+          <div class="col-sm-6">
+            <div class="blog-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <figure><a href="#"><img src="http://static.soaptheme.net/uploads/2014/11/11-500x300.jpg" alt="alt"></a></figure>
+                </div>
+                <div class="col-md-6">
+                  <div class="col-style"><span>Sightseeing</span>
+                    <h3>Things to do in Bangkok for free</h3>
+                    <ul>
+                      <li><i class="material-icons">event </i>16th February</li>
+                      <li><i class="material-icons">question_answer </i>19</li>
+                    </ul>
+                    <div class="entry-content"><a href="#" class="more-link">Read more</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="blog-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <figure><a href="#"><img src="http://static.soaptheme.net/uploads/2014/11/12-500x300.jpg" alt="alt"></a></figure>
+                </div>
+                <div class="col-md-6">
+                  <div class="col-style"><span>Nightlife</span>
+                    <h3>Nightclubs to check out in Kuala Lumpur</h3>
+                    <ul>
+                      <li><i class="material-icons">event </i>16th February</li>
+                      <li><i class="material-icons">question_answer </i>19</li>
+                    </ul>
+                    <div class="entry-content"><a href="#" class="more-link">Read more</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="blog-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <figure><a href="#"><img src="http://static.soaptheme.net/uploads/2014/11/13-500x300.jpg" alt="alt"></a></figure>
+                </div>
+                <div class="col-md-6">
+                  <div class="col-style"><span>Hotels</span>
+                    <h3>Prague hotels for every kind of traveller</h3>
+                    <ul>
+                      <li><i class="material-icons">event </i>16th February</li>
+                      <li><i class="material-icons">question_answer </i>19</li>
+                    </ul>
+                    <div class="entry-content"><a href="#" class="more-link">Read more</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="blog-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <figure><a href="#"><img src="http://static.soaptheme.net/uploads/2014/11/2-500x300.jpg" alt="alt"></a></figure>
+                </div>
+                <div class="col-md-6">
+                  <div class="col-style"><span>Eating Out</span>
+                    <h3>Shanghai restaurants for the discerning diner</h3>
+                    <ul>
+                      <li><i class="material-icons">event </i>16th February</li>
+                      <li><i class="material-icons">question_answer </i>19</li>
+                    </ul>
+                    <div class="entry-content"><a href="#" class="more-link">Read more</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6 col-md-3">
+              <div class="small-box">
+                <h2 class="widgettitle">Discover</h2>
+                <div class="discover-container">
+                  <ul class="row">
+                    <li class="col-xs-6"><a href="#">Safety</a></li>
+                    <li class="col-xs-6"><a href="#">About</a></li>
+                    <li class="col-xs-6"><a href="#">Travelo Picks</a></li>
+                    <li class="col-xs-6"><a href="#">Latest Job</a></li>
+                    <li class="col-xs-6"><a href="#">Mobile</a></li>
+                    <li class="col-xs-6"><a href="#">Press Release</a></li>
+                    <li class="col-xs-6"><a href="#">Why Host</a></li>
+                    <li class="col-xs-6"><a href="#">Blog Posts</a></li>
+                    <li class="col-xs-6"><a href="#">Social Connect</a></li>
+                    <li class="col-xs-6"><a href="#">Help Topics</a></li>
+                    <li class="col-xs-6"><a href="#">Site Map</a></li>
+                    <li class="col-xs-6"><a href="#">Policies</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="small-box travel-news">
+                <h2 class="widgettitle">Travelo News</h2>
+                <ul class="travel-news">
+                  <li>
+                    <div class="thumb"><a href="#" title="Amazing Places"><img width="64" height="64" src="http://static.soaptheme.net/uploads/2014/11/17-64x64.png" alt="1" class="attachment-widget-thumb wp-post-image"></a></div>
+                    <div class="description">
+                      <h5><a href="#" title="Amazing Places">Amazing Places</a></h5>
+                      <p>Purus ac congue arcu cursus ut vitae pulvinar massaidp. Lorem</p><span class="date">November 11, 2014</span>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="thumb"><a href="#" title="Travel Insurance"><img width="64" height="64" src="http://static.soaptheme.net/uploads/2014/11/23-64x64.png" alt="2" class="attachment-widget-thumb wp-post-image"></a></div>
+                    <div class="description">
+                      <h5><a href="#" title="Travel Insurance">Travel Insurance</a></h5>
+                      <p>Purus ac congue arcu cursus ut vitae pulvinar massaidp. Lorem</p><span class="date">November 05, 2014</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="small-box">
+                <h2 class="widgettitle">Mailing List</h2>
+                <div class="form">
+                  <form method="post">
+                    <p>Sign up for our mailing list to get latest updates and offers.</p><br>
+                    <div class="with-icon full-width">
+                      <input type="email" name="EMAIL" placeholder="your email" class="input-text full-width">
+                      <button type="submit" class="icon green-bg white-color"><i class="material-icons">done</i></button>
+                    </div>
+                    <p><br><span>We respect your privacy</span></p>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3">
+              <div class="contact-box small-box">
+                <h2 class="widgettitle">Need Travelo Help?</h2>
+                <p>We would be more than happy to help you. Our team advisor are 24/7 at your service to help you.</p>
+                <address class="contact-details"><span class="contact-phone"><i class="material-icons">call</i> (976) 937 99 92</span><br><a href="mailto:hello@gotravel.com" class="contact-email">hello@gotravel.com</a></address>
+              </div>
+              <div class="small-box social_links">
+                <ul class="social-foot clearfix">
+                  <li><a href="#" title="Twitter" class="social-icon twitter"></a></li>
+                  <li><a href="#" title="Facebook" class="social-icon facebook"></a></li>
+                  <li><a href="http://www.instagram.com/" title="Instagram" class="social-icon instagram"></a></li>
+                  <li><a href="" title="Google Plus" class="social-icon googleplus"></a></li>
+                  <li><a href="" title="GitHub" class="social-icon github"></a></li>
+                  <li><a href="" title="YouTube" class="social-icon youtube"></a></li>
+                  <li><a href="" title="Subscribe via RSS" class="social-icon rss"></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="hidden"></div>
+    <div class="loader">
+      <div class="loader_inner"></div>
+    </div>
+    <!--if lt IE 9
+    script(src='libs/html5shiv/es5-shim.min.js')
+    script(src='libs/html5shiv/html5shiv.min.js')
+    script(src='libs/html5shiv/html5shiv-printshiv.min.js')
+    script(src='libs/respond/respond.min.js')
+    -->
+    <script src="libs/jquery/jquery-1.11.2.min.js"></script>
+    <script src="libs/waypoints/waypoints.min.js"></script>
+    <script src="libs/YTPlayer/jquery.mb.YTPlayer.js"></script>
+    <script src="libs/device/device.min.js"></script>
+    <script src="libs/animate/animate-css.js"></script>
+    <script src="libs/plugins-scroll/plugins-scroll.js"></script>
+    <script src="js/common.js"></script>
+  </body>
+</html>
