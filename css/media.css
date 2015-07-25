@@ -62,6 +62,15 @@
 		text-transform: uppercase;
 		font-weight: bold;
 	}
+	.deal-cont .deal-box h2 {
+		font-size: 20px;
+	}
+	.deal-cont .deal-box h5 {
+		font-size: 30px;
+	}
+	.deal-cont .deal-box p {
+		font-size: 14px;
+	}
 	/*Disable Animation on Mobile Devices*/
 	.animated {
 		/*CSS transitions*/
